@@ -1,10 +1,10 @@
 {
-  "name": "@novosit/ngx-imageviewer",
-  "version": "1.0.0",
+  "name": "novosit-ngx-imageviewer",
+  "version": "1.0.2",
   "author": "Novosit",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/hallysonh/ngx-imageviewer"
+    "url": "https://github.com/novosit/ngx-imageviewer"
   },
   "keywords": [
     "image",

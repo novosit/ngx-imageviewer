@@ -17,7 +17,7 @@ export class ImageViewerConfig {
     padding?: number,
     radius?: number
   };
-  drawButtons: boolean;
+  drawButtons?: boolean;
   nextPageButton?: ButtonConfig;
   beforePageButton?: ButtonConfig;
   zoomOutButton?: ButtonConfig;
