@@ -30,8 +30,10 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
     }
     this._src = value;
     this.setUpResource();
-    const viewport = this._resource.viewport;
-    viewport.rotation = 0;
+    if (this._resource && this._resource.viewport) {
+      const viewport = this._resource.viewport;
+      viewport.rotation = 0;
+    }
   }
 
   // FIX not workign properly
@@ -99,7 +101,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
   private _rotateLeftButton: Button;
   private _rotateRightButton: Button;
   private _resetButton: Button;
-
+  private _animationId = 0;
   // contains all active buttons
   private _buttons = [];
 
@@ -425,6 +427,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
 
   //#region Draw Canvas
   private updateCanvas() {
+
     this.resetImage();
 
     // start new render loop
@@ -432,6 +435,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
   }
 
   private render() {
+    cancelAnimationFrame(this._animationId);
     const vm = this;
     // only re-render if dirty
     if (this._dirty && this._resource) {
@@ -456,7 +460,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
         }
       });
     }
-    requestAnimationFrame(() => this.render());
+    this._animationId = requestAnimationFrame(() => this.render());
   }
 
   private drawButtons(ctx) {
@@ -612,7 +616,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
     if (this._filetype && this._filetype.toLowerCase() === 'image') {
       return true;
     }
-    return testFile(file, '\\/(png|jpg|jpeg|gif|tiff|tif)|image/png');
+    return testFile(file, '\\/(png|jpg|jpeg|gif|tiff|tif)|image/png|dwt');
   }
 
   private isPdf(file: string | File) {
