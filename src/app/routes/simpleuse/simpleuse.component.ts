@@ -8,7 +8,7 @@ import {ImageButtonEventsTriggerService} from '../../imageviewer/image-button-ev
   styleUrls: ['./simpleuse.component.scss']
 })
 export class SimpleUseComponent {
-  samples = [{label: 'Image 6', url: 'http://localhost:4576/api/pages/image/1/jpg'},
+  samples = [{label: 'Image 6', url: 'http://invalid-url-01/api/pages/image/1/jpg'},
     { label: 'PDF Test', url: 'https://hallysonh.github.io/ngx-imageviewer/pdf-test.pdf' },
     { label: 'Image 1 (BIG)', url: 'https://hallysonh.github.io/ngx-imageviewer/assets/imgs/sample-0.jpg' },
     { label: 'Image 2', url: 'https://hallysonh.github.io/ngx-imageviewer/assets/imgs/sample-1.jpg' },
@@ -16,7 +16,7 @@ export class SimpleUseComponent {
     { label: 'Image 4', url: 'https://hallysonh.github.io/ngx-imageviewer/assets/imgs/sample-3.jpg' },
     { label: 'Image 5', url: 'https://hallysonh.github.io/ngx-imageviewer/assets/imgs/sample-4.jpg' },
     { label: 'Image 6', url: 'https://hallysonh.github.io/ngx-imageviewer/assets/imgs/sample-5.jpg' },
-    { label: 'Image 6', url: 'http://localhost:4576/api/pages/image/1' }
+    { label: 'Image 6', url: 'http://invalid-url-02/api/pages/image/1' }
   ];
 
   canvasWidth = 800;
